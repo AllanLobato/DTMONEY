@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
     :root{
         --background: #f0f2f5;
         --red: #e52e4d;
+        --green: #33cc95;
         --blue: #5429cc;
 
         --blue-light: #6933ff;
@@ -15,10 +16,11 @@ export const GlobalStyle = createGlobalStyle`
         --shape: #FFFFFF;
     }
 
-    *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Poppins" , sans-serif;
     }
 
     // font-size: 16px (Desktop)
@@ -37,8 +39,7 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    border-style, input, textarea, button {
-        font-family: 'Poppins' , sans-serif;
+    border-style, input, textarea, button, p {
         font-weight: 400;
     }
     
