@@ -3,13 +3,16 @@ import Modal from 'react-modal';
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { NewTransactionModal } from "./components/NewTransactionModal";
+import { TransactionsProvider} from "./TransactionContext";
 
 import { GlobalStyle } from "./styles/global";
+
 
 Modal.setAppElement('#root');
 
 export function App() {  // Utilizar export function define o nome do componente no export, dessa forma fica mais dificil acontecer erros
   const[isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
+
 
   function handleOpenNewTransactionModal() {
     setIsNewTransactionModalOpen(true);
@@ -20,7 +23,7 @@ export function App() {  // Utilizar export function define o nome do componente
   }
   
   return (
-    <>
+    <TransactionsProvider>
       <Header onOpenNewTransctionModal={handleOpenNewTransactionModal} />
 
       <Dashboard />
@@ -30,7 +33,7 @@ export function App() {  // Utilizar export function define o nome do componente
         isOpen={isNewTransactionModalOpen}
         onRequestClose={handleCloseNewTransactionModal}
       />
-    </>
+    </TransactionsProvider>
   );
 }
 
